@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+	<title>Glada Geten | Hem |</title>
+	<meta charset="utf-8" />
+	
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="css/slide.css">
+	<link rel="stylesheet" type="text/css" href="css/load.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+	<script src="js/load.js"></script>
+	
+	
+   
+  
+	
+</head>
+
+<body class="body">
+<div class="se-pre-con"></div>
+
+
+	<header class="mainHeader">
+		<img src="img/logo.png" />
+		
+
+
+		 
+
+
+    
+		
+				<nav><ul>
+			<li class="active"> <a href="index.html">Hem</a></li>
+			<li><a href="bokning.html">Bokning</a></li>
+			<li><a href="info.html">Info</a></li>
+			<li><a href="omoss.html">Om oss</a></li>
+			<li style="float:right"><a href="kontakt.html">Kontakt</a></li>
+		</ul></nav>
+	</header>
+		
+	<div class="mainContent">
+	
+		<div class="content">	
+				<article class="topcontent">	
+					
+					
+					
+					<h2>Rubrik 1 </h2>
+					<content>
+
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+						<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
+					</content>
+					
+				</article>
+
+				<article class="bottomcontent">	
+					
+
+					
+					<h2>Rubrik 2 </h2>
+					<content>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+						<br>
+						<br>	
+					</content>
+				
+				</article>
+		</div>
+			
+					
+	</div>
+	
+	<footer class="mainFooter">
+
+		<p>kontakt@g4hotell.se</p>
+
+		<p>08-111 222 333</p>
+
+		<p>Glada getenvägen 40</p>
+
+		<p>111 22 Stockholm</p>
+	</footer>
+<script>
+	var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex> slides.length) {slideIndex = 1}
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+</body>
+</html>
