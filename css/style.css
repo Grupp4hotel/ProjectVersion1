@@ -142,7 +142,7 @@ a:hover, a:active {
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	padding: 3% 5%;
-	margin-bottom: 0%;
+	margin-bottom: 0;
 
 
 }
@@ -446,3 +446,32 @@ BOKNING
 	font-family: 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 	font-size: 16px;
 }
+
+
+
+
+
+
+label {
+  display: block;
+  font-weight: bold;
+}
+input {
+  display: block;
+  margin-bottom: 15px;
+  
+}
+
+input[type=submit] {
+  width: 165px;
+}
+
+input[type=checkbox], label[for=subscribe] {
+  display: inline;
+}
+
+input[type=text] {
+  width: 300px;
+}
+
+[type=yourmessage]
