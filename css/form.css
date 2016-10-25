@@ -1,0 +1,35 @@
+	label{
+						font-size:1.3em;
+					}
+					input {
+    						width: 80%;
+						    padding: 12px 20px;
+						    margin: 8px 0;
+						    box-sizing: border-box;
+						}
+						.s3lect{
+							width: 80%;
+						    padding: 12px 20px;
+						    margin: 8px 0;
+						    box-sizing: border-box;
+						}
+						.input{
+							width: 80%;
+							font-size:1.25em;
+						    padding: 12px 20px;
+						    margin: 8px 0;
+						    box-sizing: border-box;
+						}
+						.textarea{
+							width: 80%;
+						    padding: 12px 20px;
+						    margin: 8px 0;
+						    box-sizing: border-box;
+						}
+						.knapp{
+							font-size:1.3em;
+							width:40%;
+							padding:3%;
+							margin: 0% auto;
+							;
+						}
