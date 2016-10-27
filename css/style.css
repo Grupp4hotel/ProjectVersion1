@@ -2,7 +2,8 @@
 
 body {
 	background-image: url('body.jpg');
-	background-color: #ffe6cc;
+	 background: linear-gradient(to left, #BCED91, #E0EEE0);
+;
 	color: #000305;
 	font-size: 87.5%; /* Base font size: 14px */
 	font-family: 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -65,11 +66,11 @@ a:hover, a:active {
    ===== Main Navigation =====
    =========================== */
 h4 { width:100%; text-align:center; border-bottom: 1px solid #888; line-height:0.1em; margin:10px 0 20px; }
-h4 span { background:#ffe6CC; padding:0 10px; }
+h4 span { background:#ccffcc; padding:0 10px; }
 .mainHeader nav {
 
 	background: ;
-	font-size: 1.2em;
+	font-size: 1.1em;
 	font-family:'Days one';
 	height: 50px;
 	line-height: 30px;
@@ -329,7 +330,7 @@ h4 span { background:#ffe6CC; padding:0 10px; }
    ====== Media Queries ======
    =========================== */
 
-@media only screen and (min-width : 150px) and (max-width : 780px)
+@media only screen and (min-width : 150px) and (max-width : 950px)
 {
 	h4 { width:100%; text-align:center; border-bottom: 1px solid #888; line-height:0.1em; margin:10px 0 20px;
 		font-size:1.65em;
