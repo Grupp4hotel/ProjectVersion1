@@ -205,6 +205,42 @@ h4 span { background:#ffe6CC; padding:0 10px; }
 	text-align:center;
 }
 
+/* ===========================
+   ======== Snabbsök =========
+   =========================== */
+
+
+        #quickSearch {
+            width: 90%;
+            margin: auto;
+            text-align: center;
+            padding: 20px;
+            background-color: darkolivegreen;
+        }
+
+        #searchLink {
+            margin-left: 15px;
+        }
+
+        #snabbsök {
+            padding-bottom: 15px;
+            padding-top: 15px;
+        }
+
+        .grön {
+            color: greenyellow;
+            font-family: sans-serif;
+            padding-left: 5px;
+        }
+
+        #tillBokning {
+            text-decoration: none;
+            color: black;
+        }
+
+
+
+
 
 /* ===========================
    ======== Sidebar ==========

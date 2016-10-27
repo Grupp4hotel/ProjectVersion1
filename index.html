@@ -40,6 +40,27 @@
 			</ul></nav>
 	</header>
 
+
+<div id="quickSearch">    
+        <form id="snabbsök">
+
+            <label class="grön" for="fromDate">Ankomst: </label>
+            <input type="date" id="fromDate" placeholder="åååå-mm-dd" />
+
+            <label class="grön" for="untilDate">Avresa: </label>
+            <input type="date" id="untilDate" placeholder="åååå-mm-dd" />
+
+            <label class="grön" for="antPers">Antal personer: </label>
+            <input type="number" min="1" max="3" id="antPers" />
+
+            <button id="searchLink" type="submit"><a id="tillBokning" target="_blank" href="bokning.html">Sök lediga rum!</a></button>
+            
+
+        </form>
+
+    </div>
+
+
 	<div class="mainContent">
 	<br>
 	<h4><span>Välkommen till den Glada Geten</span></h4>
@@ -173,6 +194,32 @@
 						</div>
 		</div>
 	</footer>
+
+
+
+
+
+<script>
+
+//===========Snabbsök=============
+
+//-----------------Få datumet från första kalendern att synas i andra-------------------
+var first = true;
+
+document.getElementById("fromDate").addEventListener("change", överför);
+
+function överför() {
+    var datum1 = document.getElementById("fromDate").value;
+    var datum2 = document.getElementById("untilDate");  
+    
+    if (first) 
+    {
+        datum2.value = datum1;
+        first = false;
+    }  
+}
+
+</script>
 
 </body>
 </html>
