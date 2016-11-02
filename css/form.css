@@ -33,3 +33,19 @@
 							margin: 0% auto;
 							;
 						}
+						.textarea2{
+							 padding: 15px 25px;
+							box-sizing: border-box;
+						width: 393px;
+						    min-width: 100%;
+						    max-width: 100%;
+
+						}
+
+						.knapp2{
+							font-size:1.3em;
+							width:40%;
+							padding:3%;
+							margin-top : 10px;
+							;
+						}
