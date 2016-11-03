@@ -6,6 +6,9 @@
 	<meta charset="utf-8" />
 	<link href="https://fonts.googleapis.com/css?family=Days+One|Russo+One" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Prociono" rel="stylesheet">
+
 	<link rel="stylesheet" href="css/style.css" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="css/slide.css">
 	<link rel="stylesheet" type="text/css" href="css/load.css">
@@ -25,6 +28,9 @@
 <body class="body">
 <div class="se-pre-con"></div>
 	<header class="mainHeader">
+	<center><a class="logo" href="index.html" <h1>GLADA GETEN</h1></a>
+	<h2>BED & BREAKFAST<h2></center>
+	<br>
 			<nav>
 				<ul>
 					<li class="active"><a href="index.html">HEM</a></li>
@@ -38,35 +44,50 @@
 	</header>
 
 
-<div id="quickSearch">    
-        <form id="snabbsök">
 
-            <label class="grön" for="fromDate">Ankomst: </label>
-            <input type="date" id="fromDate" placeholder="åååå-mm-dd" />
-
-            <label class="grön" for="untilDate">Avresa: </label>
-            <input type="date" id="untilDate" placeholder="åååå-mm-dd" />
-
-            <label class="grön" for="antPers">Antal personer: </label>
-            <input type="number" min="1" max="3" id="antPers" />
-
-            <button id="searchLink" type="submit"><a id="tillBokning" target="_blank" href="bokning.html">Sök lediga rum!</a></button>
-            
-
-        </form>
-
-    </div>
 
 
 	<div class="mainContent">
 	<br>
+	
 	<h4><span>Välkommen till den Glada Geten</span></h4>
-		<div class="content">
+		<div class="content"><br>
+		<div id="quickSearch">    
+        <form id="snabbsök">
+        <style>
+        input{width:20%; padding:1%;}
+       
+        </style>
+           
+			<input name="date" type="date" placeholder="Date">
+            
+			<input name="date" type="date" placeholder="Date">
+            
+            <input type="number" min="1" max="3" id="antPers" placeholder="antal" style="padding:1.15%"/>
+
+            <button id="searchLink" type="button">Boka</button>
+            
+			<script>
+        	$('input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"]').each(function() {
+    var el = this, type = $(el).attr('type');
+    if ($(el).val() == '') $(el).attr('type', 'text');
+    $(el).focus(function() {
+        $(el).attr('type', type);
+        el.click();
+    });
+    $(el).blur(function() {
+        if ($(el).val() == '') $(el).attr('type', 'text');
+    });
+});
+        </script>
+        </form>
+        
+    </div>
 				<article class="topcontent">
 
 
 					<content>
-						<img src="http://hdwallpaperdaily.com/wp-content/uploads/2013/04/bora-bora-hilton-hotel-hd-wallpaper-1920x1080.jpg" width="100%"  />
+						<img src="http://www.wallpapersonly.net/wallpapers/best-winter-skiing-hotels-1920x1080.jpg" width="100%"  />
 						<h2> Kvalité på riktigt</h2>
 						<p>  &#9733;&#9733;&#9733;&#9733;&#9733; Sedan 1992 </p>
 
@@ -85,7 +106,7 @@
 				<article class="bottomcontent">
 
 					<content>
-						<img src="http://wallpapercave.com/wp/IJ2J5mf.jpg" width="100%" />
+						<img src="http://i.ytimg.com/vi/3k0ET-7LgZQ/maxresdefault.jpg" width="100%" />
 						<h2>Bra väder oavsett årstid</h2>
 						<p> Ett område där man kan komma undan jobbet och strul som livet har att erbjuda</p>
 						<div class="basicBox">
@@ -139,7 +160,10 @@
 				<article class="side2">
 					<content>
 						<img src="http://www.wallpaperup.com/uploads/wallpapers/2015/07/24/761368/big_thumb_c2177ff23f862b515dd9f1517b011727.jpg" width="100%" />
-						<h2> Frukost, lunch, middag & dryck</h2>
+						<h2> Frukost/Lunch/Middag & Dryck vid vår restaurang </h2>
+						
+
+
 						<div class="basicBox">
   							<p>Läs mer</p>
   							<a href="mat.html"> <svg width="130" height="65" viewBox="0 0 130 65" xmlns="http://www.w3.org/2000/svg">
