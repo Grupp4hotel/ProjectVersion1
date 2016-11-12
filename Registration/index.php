@@ -14,7 +14,7 @@ include('includes/db.php');
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <title>Starter Template for Bootstrap</title>
+    <title>Login Page for Glada Geten</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -38,9 +38,8 @@ include('includes/db.php');
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li class="active"><a href="index.php">Login</a></li>
+            <li><a href="Register.php">Register</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -48,10 +47,9 @@ include('includes/db.php');
 
     <div class="container">
 
-      <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-      </div>
+
+
+
 
     </div><!-- /.container -->
 
