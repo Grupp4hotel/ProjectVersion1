@@ -34,7 +34,7 @@ include('includes/db.php');
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
+          <a class="navbar-brand" href="#">Glada Geten Login</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -47,7 +47,24 @@ include('includes/db.php');
 
     <div class="container">
 
+      <form method="post" style="margin-top:35px;">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" name="email" class="form-control" placeholder="Email">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" name="password" class="form-control" placeholder="Password">
+        </div>
 
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="remember_me"> Remember Me
+          </label>
+        </div>
+        <button type="submit" name="login" class="btn btn-default">Login</button>
+        <a href="forgot_password.php">Forgot Password ?</a>
+      </form>
 
 
 
