@@ -48,24 +48,26 @@ include('includes/db.php');
     <div class="container">
 
       <form method="post" style="margin-top:35px;">
+        <h2>Register Here</h2>
+        <hr />
         <div class="form-group">
           <label>Email address</label>
-          <input type="text" name="name" class="form-control" placeholder="Name">
+          <input type="text" name="name" class="form-control" placeholder="Name" required>
         </div>
 
 
         <div class="form-group">
           <label for="exampleInputEmail1">Email address</label>
-          <input type="email" name="email" class="form-control" placeholder="Email">
+          <input type="email" name="email" class="form-control" placeholder="Email" required>
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Password</label>
-          <input type="password" name="password" class="form-control" placeholder="Password">
+          <input type="password" name="password" class="form-control" placeholder="Password" required>
         </div>
 
         <div class="form-group">
           <label>Confirm Password</label>
-          <input type="password" name="confirm_password" class="form-control" placeholder="Password">
+          <input type="password" name="confirm_password" class="form-control" placeholder="Password" required>
         </div>
 
 
