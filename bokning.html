@@ -69,10 +69,10 @@
 						<form id="f0rm">
 							<label></label><br><input class="input" type="text" placeholder="Förnamn"><br>
 							<label></label><br><input class="input" type="text" placeholder="Efternamn"><br>
-							<label></label><br><input class="input" type="date" placeholder="Incheckning"><br>
-							<label></label><br><input class="input" type="date" placeholder="Utcheckning"><br>
+							<label></label><br><input class="input" type="date" placeholder="Incheckning" id="inDatum"><br>
+							<label></label><br><input class="input" type="date" placeholder="Utcheckning" id="utDatum"><br>
 							<label>Personer</label><br>
-							<select class="s3lect">
+							<select class="s3lect" id="numPpl">
 							<option class="opti0n" value="blank"></option>
 							<option class="opti0n" value="1">1</option>
 							<option class="opti0n" value="2">2</option>
@@ -113,6 +113,32 @@
 						</div>
 		</div>
 	</footer>
+
+
+
+<script>     //tar datum från första sidan
+
+        överför();
+
+        function överför() {
+
+                var bokningsStart = localStorage.getItem("snabbsök");
+                var hämtadData = JSON.parse(bokningsStart);
+
+                //console.log(hämtadData);
+
+            //i bokning
+            var inDatum = document.getElementById("inDatum");
+            var utDatum = document.getElementById("utDatum");
+            var numPpl = document.getElementById("numPpl");
+
+            inDatum.value = hämtadData[0];
+            utDatum.value = hämtadData[1];
+            numPpl.value = hämtadData[2];
+
+        }
+    </script>
+
 
 </body>
 </html>
