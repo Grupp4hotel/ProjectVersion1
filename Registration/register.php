@@ -68,6 +68,12 @@ $query = "insert into users (name,email,password,token) values ('$name','$email'
 $db->query($query);
 
 
+$message= "Hi $name! Account created , here is the activation link : http://localhost/registration/activate.php?token=$token";
+
+mail($email , 'Activate account' , $message , 'from: prasanth.joseph@student.kyh.se');
+header("Location: index.php$success=" .urlencode("Activation Email sent!"));
+exit;
+
 }
 
 
