@@ -1,7 +1,66 @@
 <?php
 
+session_start();
 include('includes/config.php');
 include('includes/db.php');
+
+if(isset($_POST['register'])){
+$_SESSION['name'] = $_POST['name'];
+$_SESSION['email'] = $_POST['email'];
+$_SESSION['password'] = $_POST['password'];
+$_SESSION['confirm_password'] = $_POST['confirm_password'];
+
+function isUnique($email) {
+$query = "select * from users where email= '$email'";
+global $db;
+
+$result = $db->query($query);
+
+if($result->num_rows > 0){
+return false;
+}
+
+else return true;
+
+}
+
+
+if(strlen($_POST['name']) < 3) {
+header("Location:register.php?err=".urlencode("The name must be atleast 5 characters"));
+exit();
+}
+
+else if(strlen($_POST['password']) < 5 ){
+  header("Location:register.php?err=".urlencode("The password should be atleast 5 characters"));
+  exit();
+
+}
+
+else if ($_POST['password'] != $_POST['confirm_password']) {
+
+  header("Location:register.php?err=".urlencode("The password doesnt match"));
+  exit();
+
+}
+
+
+else if(strlen($_POST['confirm_password']) < 5 ){
+
+  header("Location:register.php?err=".urlencode("The password doesnt match"));
+  exit();
+
+}
+
+else if(!isUnique($_POST['email'])){
+  header("Location:register.php?err=".urlencode("This email already exists .. Please use another one"));
+  exit();
+}
+
+
+
+
+
+}
 
 
 ?>
@@ -47,27 +106,34 @@ include('includes/db.php');
 
     <div class="container">
 
-      <form method="post" style="margin-top:35px;">
+      <form action="register.php" method="post" style="margin-top:35px;">
         <h2>Register Here</h2>
+<?php if (isset($_GET['err'])) {?>
+
+        <div class="alert alert-danger">
+          <?php echo $_GET['err'];?>
+        </div>
+<?php } ?>
+
         <hr />
         <div class="form-group">
-          <label>Email address</label>
-          <input type="text" name="name" class="form-control" placeholder="Name" required>
+          <label>Name</label>
+          <input type="text" name="name" class="form-control" placeholder="Name" value="<?php echo @$_SESSION['name']; ?>" required>
         </div>
 
 
         <div class="form-group">
           <label for="exampleInputEmail1">Email address</label>
-          <input type="email" name="email" class="form-control" placeholder="Email" required>
+          <input type="email" name="email" class="form-control" placeholder="Email" value="<?php echo @$_SESSION['email']; ?>" required>
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Password</label>
-          <input type="password" name="password" class="form-control" placeholder="Password" required>
+          <input type="password" name="password" class="form-control" placeholder="Password" value="<?php echo @$_SESSION['password']; ?>" required>
         </div>
 
         <div class="form-group">
           <label>Confirm Password</label>
-          <input type="password" name="confirm_password" class="form-control" placeholder="Password" required>
+          <input type="password" name="confirm_password" class="form-control" placeholder="Password" value="<?php echo @$_SESSION['confirm_password']; ?>" required>
         </div>
 
 
