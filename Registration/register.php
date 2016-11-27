@@ -57,7 +57,18 @@ else if(!isUnique($_POST['email'])){
 }
 
 
+else {
+$name = mysqli_real_escape_string($db, $_POST['name']);
+$email = mysqli_real_escape_string($db, $_POST['email']);
+$password = mysqli_real_escape_string($db, $_POST['password']);
+$token = bin2hex(openssl_random_pseudo_bytes(32));
 
+$query = "insert into users (name,email,password,token) values ('$name','$email','$password','$token')";
+
+$db->query($query);
+
+
+}
 
 
 }
@@ -93,7 +104,7 @@ else if(!isUnique($_POST['email'])){
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Glada Geten Login</a>
+          <a class="navbar-brand" href="#">Glada Geten</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">

@@ -34,7 +34,7 @@ include('includes/db.php');
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Glada Geten Login</a>
+          <a class="navbar-brand" href="#">Glada Geten</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -53,7 +53,7 @@ include('includes/db.php');
           <label for="exampleInputEmail1">Email address</label>
           <input type="email" name="email" class="form-control" placeholder="Email">
         </div>
-      
+
         <button type="submit" name="send_my_password" class="btn btn-default">Send My Password</button>
         <a href="index.php" class="btn btn-danger">Cancel</a>
       </form>
