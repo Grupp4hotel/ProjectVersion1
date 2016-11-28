@@ -1,7 +1,38 @@
 <?php
 
+session_start();
 include('includes/config.php');
 include('includes/db.php');
+
+if(isset($_POST['login'])){
+$email= mysqli_real_escape_string($db, $_POST['email']);
+$password= mysqli_real_escape_string($db, $_POST['password']);
+
+$query = "select * from users where email='$email' and password='$password'";
+
+$result= $db->query($query);
+
+if($row = $result->fetch_assoc() ) {
+
+if($row['status'] == 1){
+  $_SESSION['user_email']= $email;
+header("location:myaccount.php");
+exit();
+}
+else {
+  header("location:index.php?err=" . urlencode("The user with this account is not activated"));
+  exit();
+
+}
+}
+else {
+  header("location:index.php?err=" . urlencode("Wrong email or password"));
+  exit();
+
+}
+
+
+}
 
 
 ?>
@@ -47,7 +78,7 @@ include('includes/db.php');
 
     <div class="container">
 
-      <form method="post" style="margin-top:35px;">
+      <form action="index.php" method="post" style="margin-top:35px;">
         <div class="form-group">
           <label for="exampleInputEmail1">Email address</label>
           <input type="email" name="email" class="form-control" placeholder="Email">
