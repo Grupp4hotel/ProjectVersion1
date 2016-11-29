@@ -3,21 +3,7 @@
 
 <head>
     <title> Glada Geten | Kontakt</title>
-    <meta charset="utf-8" />
-    <link href="https://fonts.googleapis.com/css?family=Days+One|Russo+One" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Prociono" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-
-
-    <link rel="stylesheet" href="css/style.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="css/load.css">
-    <link rel="stylesheet" type="text/css" href="css/button.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
-    <script src="js/load.js"></script>
-
+    <?php include "includes/head.php";?>
 </head>
 
 <body class="body">
@@ -68,7 +54,7 @@
 
                 <content>
                     <h2>Hitta oss </h2>
-                   <iframe src="http://kartor.eniro.se/m/GlK2G?embed=true&center=65.68769190893039,21.851806640625&zoom=10&layer=map" width="100%" height="300" frameborder="0" style="border:0"></iframe>                    
+                   <iframe src="http://kartor.eniro.se/m/GlK2G?embed=true&center=65.68769190893039,21.851806640625&zoom=10&layer=map" width="100%" height="300" frameborder="0" style="border:0"></iframe>
                 </content>
             </article>
         </div>

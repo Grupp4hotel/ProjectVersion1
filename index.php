@@ -3,29 +3,7 @@
 <html lang="sv">
 <head>
 	<title> Glada Geten | Hem</title>
-	<meta charset="utf-8" />
-	<link href="https://fonts.googleapis.com/css?family=Days+One|Russo+One" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Prociono" rel="stylesheet">
-
-	<link rel="stylesheet" href="css/style.css" type="text/css" />
-	<link rel="stylesheet" type="text/css" href="css/slide.css">
-	<link rel="stylesheet" type="text/css" href="css/load.css">
-	<link rel="stylesheet" type="text/css" href="css/button.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
-	<script src="js/load.js"></script>
-
-
-    <!--för Datepicker-->
-    <link href="https://code.jquery.com/ui/1.11.4/themes/le-frog/jquery-ui.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-
-
+	<?php include "includes/head.php";?>
 </head>
 
 <body class="body">
@@ -52,7 +30,7 @@
 
 	<div class="mainContent">
 	<br>
-	
+
 	<h4><span>Välkommen till den Glada Geten</span></h4>
 		<div class="content"><br>
 
@@ -82,17 +60,17 @@
 
        <style>
         input{width:20%; padding:1%;}
-       
+
         </style>
-           
+
 			 <!--<input id="fromDate" name="date" type="date" placeholder="åååå-mm-dd">
-            
+
 			<input id="untilDate" name="date" type="date" placeholder="åååå-mm-dd">
-            
+
             <input type="number" min="1" max="3" id="antPers" placeholder="antal" style="padding:1.15%"/>
 
             <button id="searchLink" type="button"><a id="tillBokning" target="_blank" href="bokning.html">Boka</a></button>
-            
+
 			<script>
         	$('input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"]').each(function() {
     var el = this, type = $(el).attr('type');
@@ -107,7 +85,7 @@
 });
         </script>
         </form>-->
-        
+
     </div>
 				<article class="topcontent">
 
@@ -145,7 +123,7 @@
 					</content>
 
 				</article>
-				
+
 				<!--  <article class="midcontent">
 					<content>
 					<img src="img/2.jpg" width="100%"/>
@@ -257,13 +235,13 @@ document.getElementById("fromDate").addEventListener("change", överför);
 
 function överför() {
     var datum1 = document.getElementById("fromDate").value;
-    var datum2 = document.getElementById("untilDate");  
-    
-    if (first) 
+    var datum2 = document.getElementById("untilDate");
+
+    if (first)
     {
         datum2.value = datum1;
         first = false;
-    }  
+    }
 }
 
 </script>

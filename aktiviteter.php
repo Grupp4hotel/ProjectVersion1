@@ -3,27 +3,13 @@
 <html lang="en">
 <head>
 	<title> Glada Geten | Aktiviteter</title>
-	<meta charset="utf-8" />
-	<link href="https://fonts.googleapis.com/css?family=Days+One|Russo+One" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Prociono" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-
-
-	<link rel="stylesheet" href="css/style.css" type="text/css" />
-	<link rel="stylesheet" type="text/css" href="css/load.css">
-	<link rel="stylesheet" type="text/css" href="css/button.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
-	<script src="js/load.js"></script>
-	
+	<?php include "includes/head.php";?>
 </head>
 
 <body class="body">
 <div class="se-pre-con"></div>
 	<header class="mainHeader">
-	
+
 	<center><a class="logo" href="index.html" <h1>GLADA GETEN</h1></a>
 	<h2>BED & BREAKFAST<h2></center>
 	<br>
@@ -34,15 +20,15 @@
 					<li class="active"><a href="aktiviteter.html">AKTIVITETER</a></li>
 					<li><a href="galleri.html">GALLERI</a></li>
 					<li><a href="omoss.html">OM GLADA GETEN</a></li>
-					<li><a href="kontakt.html">KONTAKT</a></li>	
+					<li><a href="kontakt.html">KONTAKT</a></li>
 				</ul>
 			</nav>
 	</header>
-		
+
 	<div class="mainContent"><br>
 		<h4><span>Aktiviteter</span></h4>
-			<div class="content">	
-				<article class="topcontent">	
+			<div class="content">
+				<article class="topcontent">
 					<content>
 						<h2>Skotersafari</h2>
 							<p>Du tillsammans med en ledare kan känna att du kör tryggt och säkert på en lagom lång tur i den underbara naturen i tjärnholmens omnejd. Under turerna stannar vi för korvgrillning! Någon form av körkort krävs, svenskt eller utländskt. Tidsåtgång 4 timmar pris 500 kr per person</p>
@@ -58,8 +44,8 @@
                 </article>
             </div>
 
-			<div class="content">	
-				<article class="topcontent">	
+			<div class="content">
+				<article class="topcontent">
 					<content>
 						<h2>Getmatning</h2>
 							<p>Bokningsbar aktivitet som innefattar mat till Gösta och Selma och kort information om getskötsel. Tidsåtgång: ca 30 min Pris: 100 kr pp</p>
@@ -74,12 +60,12 @@
                 </article>
             </div>
 
-        	<div class="content">	
-        		<article class="topcontent">	
+        	<div class="content">
+        		<article class="topcontent">
         			<content>
         				<h2>Skogspromenad</h2>
         					<p>Guidad vandring runt området för den som är nyfiken på lite mer lokalkännedom.
-							Tidsåtgång: ca 2 timmar Pris: 250 kr pp. Finns även kartor för kostnadsfria vandringar utan guide.</p>		
+							Tidsåtgång: ca 2 timmar Pris: 250 kr pp. Finns även kartor för kostnadsfria vandringar utan guide.</p>
         			</content>
         		</article>
 
@@ -92,29 +78,29 @@
                	</article>
     	    </div>
 	</div>
-                
-
-           
-
-           
-        
 
 
-    
+
+
+
+
+
+
+
 
     <footer class="mainFooter">
     	<h4></h4>
         <br>
 		<div class="besök">
 		<h2>Besök oss på plats</h2>
-		
+
 		<p>Glada getenvägen 40</p>
 		<p>111 22 Stockholm</p>
 		</div>
 
 		<div class="kontakt">
 		<h2>Kontakta oss</h2>
-		
+
 		<p>kontakt@g4hotell.se</p>
 		<p>08-111 222 333</p>
 		</div>
@@ -131,4 +117,3 @@
 </body>
 </html>
 
-					

@@ -3,21 +3,7 @@
 <html lang="en">
 <head>
 	<title> Glada Geten | Om oss </title>
-	<meta charset="utf-8" />
-	<link href="https://fonts.googleapis.com/css?family=Days+One|Russo+One" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Prociono" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-
-	<link rel="stylesheet" href="css/style.css" type="text/css" />
-	<link rel="stylesheet" type="text/css" href="css/load.css">
-	<link rel="stylesheet" type="text/css" href="css/button.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
-	<script src="js/load.js"></script>
-
+	<?php include "includes/head.php";?>
 </head>
 
 
@@ -45,7 +31,7 @@
 		<div class="content">
 				<article class="topcontent">
 
-					
+
 					<content>
 						<img src="img/7.jpg" width="100%">
 						<h2>Om Den Glada Geten B & B</h2>

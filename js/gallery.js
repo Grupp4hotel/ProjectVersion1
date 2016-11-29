@@ -1,8 +1,4 @@
-	$(window).load(function() {
-		// Animate loader off screen
-		$(".se-pre-con").fadeOut("slow");;
-	});
-	function openModal() {
+function openModal() {
   document.getElementById('myModal').style.display = "block";
 }
 
