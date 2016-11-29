@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="sv">
 <head>
@@ -9,17 +8,17 @@
 <body class="body">
 <div class="se-pre-con"></div>
 	<header class="mainHeader">
-	<center><a class="logo" href="index.html">GLADA GETEN</a>
+	<center><a class="logo" href="index.php">GLADA GETEN</a>
 	<h2>BED & BREAKFAST<h2></center>
 	<br>
 			<nav>
 				<ul>
-					<li class="active"><a href="index.html">HEM</a></li>
-					<li><a href="bokning.html">BOKA</a></li>
-					<li><a href="aktiviteter.html">AKTIVITETER</a></li>
-					<li><a href="galleri.html">GALLERI</a></li>
-					<li><a href="omoss.html">OM GLADA GETEN</a></li>
-					<li><a href="kontakt.html">KONTAKT</a></li>
+					<li class="active"><a href="index.php">HEM</a></li>
+					<li><a href="bokning.php">BOKA</a></li>
+					<li><a href="aktiviteter.php">AKTIVITETER</a></li>
+					<li><a href="galleri.php">GALLERI</a></li>
+					<li><a href="omoss.php">OM GLADA GETEN</a></li>
+					<li><a href="kontakt.php">KONTAKT</a></li>
 				</ul>
 			</nav>
 	</header>
@@ -69,7 +68,7 @@
 
             <input type="number" min="1" max="3" id="antPers" placeholder="antal" style="padding:1.15%"/>
 
-            <button id="searchLink" type="button"><a id="tillBokning" target="_blank" href="bokning.html">Boka</a></button>
+            <button id="searchLink" type="button"><a id="tillBokning" target="_blank" href="bokning.php">Boka</a></button>
 
 			<script>
         	$('input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"]').each(function() {
@@ -97,7 +96,7 @@
 
 						<div class="basicBox">
   							<p>Läs mer</p>
-  							<a href="omoss.html"> <svg width="130" height="65" viewBox="0 0 130 65" xmlns="http://www.w3.org/2000/svg">
+  							<a href="omoss.php"> <svg width="130" height="65" viewBox="0 0 130 65" xmlns="http://www.w3.org/2000/svg">
     						<rect x='0' y='0' fill='none' width='130' height='65'/>
   							</svg></a>
 						</div>
@@ -115,7 +114,7 @@
 						<p>På den glada geten har vi två ”husgetter”, Gösta och Selma, som håller till i en liten hage alldeles bredvid gårdshuset. Kring gården finns även trevliga vandringsslingor och vågar min sig på ett dopp i älven kan man boka bastu på den glada geten efter det svalkande doppet.</p>
 						<div class="basicBox">
   							<p>Läs mer</p>
-  							<a href="aktiviteter.html"> <svg width="130" height="65" viewBox="0 0 130 65" xmlns="http://www.w3.org/2000/svg">
+  							<a href="aktiviteter.php"> <svg width="130" height="65" viewBox="0 0 130 65" xmlns="http://www.w3.org/2000/svg">
     						<rect x='0' y='0' fill='none' width='130' height='65'/>
   							</svg></a>
 						</div>
@@ -137,7 +136,7 @@
 					<br>
 					<div class="basicBox">
   							<p>Läs mer</p>
-  							<a href="omoss.html"> <svg width="130" height="65" viewBox="0 0 130 65" xmlns="http://www.w3.org/2000/svg">
+  							<a href="omoss.php"> <svg width="130" height="65" viewBox="0 0 130 65" xmlns="http://www.w3.org/2000/svg">
     						<rect x='0' y='0' fill='none' width='130' height='65'/>
   							</svg></a>
 						</div>
@@ -156,7 +155,7 @@
 
 						<div class="basicBox">
   							<p>Läs mer</p>
-  							<a href="aktiviteter.html"> <svg width="130" height="65" viewBox="0 0 130 65" xmlns="http://www.w3.org/2000/svg">
+  							<a href="aktiviteter.php"> <svg width="130" height="65" viewBox="0 0 130 65" xmlns="http://www.w3.org/2000/svg">
     						<rect x='0' y='0' fill='none' width='130' height='65'/>
   							</svg></a>
 						</div>
@@ -170,7 +169,7 @@
 
 						<div class="basicBox">
   							<p>Läs mer</p>
-  							<a href="aktiviteter.html"> <svg width="130" height="65" viewBox="0 0 130 65" xmlns="http://www.w3.org/2000/svg">
+  							<a href="aktiviteter.php"> <svg width="130" height="65" viewBox="0 0 130 65" xmlns="http://www.w3.org/2000/svg">
     						<rect x='0' y='0' fill='none' width='130' height='65'/>
   							</svg></a>
 						</div>
@@ -182,7 +181,7 @@
 						<h2>Guidad Skotersafari - ta en lång tur i den underbara naturen.</h2>
 						<div class="basicBox">
   							<p>Läs mer</p>
-  							<a href="aktiviteter.html"> <svg width="130" height="65" viewBox="0 0 130 65" xmlns="http://www.w3.org/2000/svg">
+  							<a href="aktiviteter.php"> <svg width="130" height="65" viewBox="0 0 130 65" xmlns="http://www.w3.org/2000/svg">
     						<rect x='0' y='0' fill='none' width='130' height='65'/>
   							</svg></a>
 						</div>
@@ -213,7 +212,7 @@
 		<div class="karta">
 			<div class="basicBox">
   							<p>Hitta hit</p>
-  							<a href="kontakt.html"> <svg width="130" height="65" viewBox="0 0 130 65" xmlns="http://www.w3.org/2000/svg">
+  							<a href="kontakt.php"> <svg width="130" height="65" viewBox="0 0 130 65" xmlns="http://www.w3.org/2000/svg">
     						<rect x='0' y='0' fill='none' width='130' height='65'/>
   							</svg></a>
 						</div>

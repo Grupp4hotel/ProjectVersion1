@@ -10,17 +10,17 @@
 <body class="body">
 <div class="se-pre-con"></div>
 	<header class="mainHeader">
-	<center><a class="logo" href="index.html" <h1>GLADA GETEN</h1></a>
+	<center><a class="logo" href="index.php" <h1>GLADA GETEN</h1></a>
 	<h2>BED & BREAKFAST<h2></center>
 	<br>
 		<nav>
 			<ul>
-				<li><a href="index.html">HEM</a></li>
-				<li class="active"><a href="bokning.html">BOKA</a></li>
-				<li><a href="aktiviteter.html">AKTIVITETER</a></li>
-				<li><a href="galleri.html">GALLERI</a></li>
-				<li><a href="omoss.html">OM GLADA GETEN</a></li>
-				<li><a href="kontakt.html">KONTAKT</a></li>
+				<li><a href="index.php">HEM</a></li>
+				<li class="active"><a href="bokning.php">BOKA</a></li>
+				<li><a href="aktiviteter.php">AKTIVITETER</a></li>
+				<li><a href="galleri.php">GALLERI</a></li>
+				<li><a href="omoss.php">OM GLADA GETEN</a></li>
+				<li><a href="kontakt.php">KONTAKT</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -94,7 +94,7 @@
 		<div class="karta">
 			<div class="basicBox">
   							<p>Hitta hit</p>
-  							<a href="kontakt.html"> <svg width="130" height="65" viewBox="0 0 130 65" xmlns="http://www.w3.org/2000/svg">
+  							<a href="kontakt.php"> <svg width="130" height="65" viewBox="0 0 130 65" xmlns="http://www.w3.org/2000/svg">
     						<rect x='0' y='0' fill='none' width='130' height='65'/>
   							</svg></a>
 						</div>

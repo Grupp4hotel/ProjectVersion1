@@ -1,3 +1,20 @@
+<?php 
+	require_once "admin/includes/db.php";
+
+	// Query for activities
+	$query = "SELECT * FROM page_activities";
+	$result = $db->query($query);
+	$activities = array();
+
+	while($row = mysqli_fetch_assoc($result)) {
+	   $activities[] = $row;
+	}
+?>
+
+
+<script>
+	var isAdmin = <?= $admin;?>
+</script>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,73 +27,33 @@
 <div class="se-pre-con"></div>
 	<header class="mainHeader">
 
-	<center><a class="logo" href="index.html" <h1>GLADA GETEN</h1></a>
+	<center><a class="logo" href="index.php" <h1>GLADA GETEN</h1></a>
 	<h2>BED & BREAKFAST<h2></center>
 	<br>
 			<nav>
 				<ul>
-					<li><a href="index.html">HEM</a></li>
-					<li><a href="bokning.html">BOKA</a></li>
-					<li class="active"><a href="aktiviteter.html">AKTIVITETER</a></li>
-					<li><a href="galleri.html">GALLERI</a></li>
-					<li><a href="omoss.html">OM GLADA GETEN</a></li>
-					<li><a href="kontakt.html">KONTAKT</a></li>
+					<li><a href="index.php">HEM</a></li>
+					<li><a href="bokning.php">BOKA</a></li>
+					<li class="active"><a href="aktiviteter.php">AKTIVITETER</a></li>
+					<li><a href="galleri.php">GALLERI</a></li>
+					<li><a href="omoss.php">OM GLADA GETEN</a></li>
+					<li><a href="kontakt.php">KONTAKT</a></li>
 				</ul>
 			</nav>
 	</header>
 
 	<div class="mainContent"><br>
 		<h4><span>Aktiviteter</span></h4>
-			<div class="content">
-				<article class="topcontent">
-					<content>
-						<h2>Skotersafari</h2>
-							<p>Du tillsammans med en ledare kan känna att du kör tryggt och säkert på en lagom lång tur i den underbara naturen i tjärnholmens omnejd. Under turerna stannar vi för korvgrillning! Någon form av körkort krävs, svenskt eller utländskt. Tidsåtgång 4 timmar pris 500 kr per person</p>
-					</content>
-				</article>
-
-				<article class="bottomcontent">
-					<content>
-						<h2>SPA</h2>
-							<p>Boka en spaupplevelse på den glada getens egna SPA! Vi erbjuder:
-							Massage 50 min – 350 kr Kurbad 30 min – 250 kr Kroppsscrubb 50 min – 350 kr Badtunna – 300 kr per timme, uppvärmning sköts av den glada geten.</p>
-					</content>
-                </article>
-            </div>
-
-			<div class="content">
-				<article class="topcontent">
-					<content>
-						<h2>Getmatning</h2>
-							<p>Bokningsbar aktivitet som innefattar mat till Gösta och Selma och kort information om getskötsel. Tidsåtgång: ca 30 min Pris: 100 kr pp</p>
-					</content>
-				</article>
-
-				<article class="bottomcontent">
-					<content>
-						<h2>Getklappning</h2>
-							<p>Gå in i hagen och klappa getterna! Personal från glada geten följer med och ser till att du kommer nära både Gösta och Selma, och vid rätt tid på året även lammen. Tidsåtgång: ca 30 min Pris: 50 kr pp</p>
-					</content>
-                </article>
-            </div>
-
-        	<div class="content">
-        		<article class="topcontent">
-        			<content>
-        				<h2>Skogspromenad</h2>
-        					<p>Guidad vandring runt området för den som är nyfiken på lite mer lokalkännedom.
-							Tidsåtgång: ca 2 timmar Pris: 250 kr pp. Finns även kartor för kostnadsfria vandringar utan guide.</p>
-        			</content>
-        		</article>
-
-        		<article class="bottomcontent">
-        			<content>
-        				<h2>Kalendarium</h2>
-        					<p>Julbord – festa loss på den glada getens julbord under hela december månad!
-        					Under juni firar vi Midsommar!</p>
-        			</content>
-               	</article>
-    	    </div>
+            <?php foreach ($activities as $activity): ?>
+				<div class="content">
+					<article>
+						<content>
+							<h2><?= $activity["title"] ?></h2>
+								<p><?= $activity["summary"] ?></p>
+						</content>
+					</article>
+	            </div>
+            <?php endforeach ?>
 	</div>
 
 
@@ -107,7 +84,7 @@
 		<div class="karta">
 			<div class="basicBox">
   							<p>Hitta hit</p>
-  							<a href="kontakt.html"> <svg width="130" height="65" viewBox="0 0 130 65" xmlns="http://www.w3.org/2000/svg">
+  							<a href="kontakt.php"> <svg width="130" height="65" viewBox="0 0 130 65" xmlns="http://www.w3.org/2000/svg">
     						<rect x='0' y='0' fill='none' width='130' height='65'/>
   							</svg></a>
 						</div>
