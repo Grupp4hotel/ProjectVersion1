@@ -32,27 +32,75 @@
 
 	<h4><span>Välkommen till den Glada Geten</span></h4>
 		<div class="content"><br>
+		
+<div id="quickSearch">
+        <form id="snabbsök" onsubmit="mySubmit()">
 
-<div id="find_rooms">
-	<form name="find_rooms" action="" method="post">
-		<div class="form-group">
-			<label for="fromDate">Ankomst:</label>
-			<input name="arrival" type="date" id="arrival">
-		</div>
+            <label class="sökfs" for="fromDate">Ankomst: </label>
+            <input type="text" id="fromDate" placeholder="åååå-mm-dd"/>
 
-		<div class="form-group">
-			<label>Avresa:</label>
-			<input name="departure" type="date" id="departure">
-		</div>
+            <label class="sökfs" for="untilDate">Avresa: </label>
+            <input type="text" id="untilDate" placeholder="åååå-mm-dd"/>
 
-		<div class="form-group">
-			<label for="antPers">Pers x:</label>
-			<input name="guests" type="number" min="1" max="3" id="guests">
-		</div>
+            <label class="sökfs" for="antPers">Pers x: </label>
+            <input type="number" min="1" max="3" id="antPers" />
 
-		<button id="searchLink" type="submit">Hitta lediga rum</button>
-	</form>
-</div> <!-- find_rooms -->
+            <button id="searchLink" type="submit">Hitta lediga rum</button>
+
+        </form>
+
+    </div>
+
+<script>
+        $.datepicker.setDefaults({
+            changeMonth: true,
+            changeYear: true,
+            dateFormat: 'dd-mm-yy'
+        });
+        $('#fromDate').datepicker({ dateFormat: 'yy-mm-dd',
+            minDate: '+0',
+            onSelect: function (dateStr) {
+                var min = $(this).datepicker('getDate') || new Date(); // Selected date or today if none
+                var max = new Date(min.getTime());
+                max.setMonth(max.getMonth() + 36); // Add 3 years
+                $('#untilDate').datepicker('option', { minDate: min, maxDate: max });
+            }
+        });
+        $('#untilDate').datepicker({ dateFormat: 'yy-mm-dd',
+            minDate: '+0',
+            maxDate: '+1m',
+            onSelect: function (dateStr) {
+                var max = $(this).datepicker('getDate'); // Selected date or null if none
+                $('#fromDate').datepicker('option', { maxDate: max });
+            }
+        });
+
+         //-----------------------------Överför till bokningssidan---------------
+
+        document.getElementById("searchLink").addEventListener("click", tillBokning);
+
+        function tillBokning() {
+
+            //i snabbsök
+            var datumFrån = document.getElementById("fromDate").value;
+            var datumTill = document.getElementById("untilDate").value;
+            var antalPers = document.getElementById("antPers").value;
+
+            var överförData = [];
+
+            överförData.push(datumFrån);
+            överförData.push(datumTill);
+            överförData.push(antalPers);
+
+
+            var bokningsStart = JSON.stringify(överförData);
+            localStorage.setItem("snabbsök", bokningsStart);
+        }
+
+        function mySubmit() {
+            window.open("bokning.html");
+        }
+    </script>
 
 
 
