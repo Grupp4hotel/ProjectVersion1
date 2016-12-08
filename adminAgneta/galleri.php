@@ -1,4 +1,4 @@
-
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,6 +28,26 @@
 </head>
 
 <body class="body">
+
+
+<?php
+$db = mysqli_connect('localhost', 'root', '', 'gettexter');
+
+if (!$db) {
+    die('Connect Error (' . mysqli_connect_errno() . ') '. mysqli_connect_error());
+}
+
+if(isset($_POST['update'])){ 
+	$foto = $_FILES['nyBild']['name'];
+	move_uploaded_file($_FILES['nyBild']['tmp_name'], 'C:\xampp\htdocs\ProjectVersion1\adminAgneta\galleri\\' . $foto);
+	
+	$q = "INSERT INTO bilder (vag) values ('galleri/$foto')";	
+	$result = mysqli_query($db, $q);
+    }
+
+?>
+
+
 <div class="se-pre-con"></div>
 	<header class="mainHeader">
 	<center><a class="logo" href="index.php" <h1>GLADA GETEN</h1></a>
@@ -67,14 +87,27 @@
 		
 	</style>
 		<div class="gal">
-			<a class="fancybox" rel="group" href="img/18.jpg"><img src="img/18.jpg" alt="" /></a>
-			<a class="fancybox" rel="group" href="img/2.jpg"><img src="img/2.jpg" alt="" /></a>
-			<a class="fancybox" rel="group" href="img/3.jpg"><img src="img/3.jpg" alt="" /></a>
-			<a class="fancybox" rel="group" href="img/4.jpg"><img src="img/4.jpg" alt="" /></a>
-			<a class="fancybox" rel="group" href="img/5.jpg"><img src="img/5.jpg" alt="" /></a>
-			<a class="fancybox" rel="group" href="img/6.jpg"><img src="img/6.jpg" alt="" /></a>
-			<a class="fancybox" rel="group" href="img/20.jpg"><img src="img/20.jpg" alt="" /></a>
-			<a class="fancybox" rel="group" href="img/23.jpg"><img src="img/23.jpg" alt="" /></a>
+
+
+		<?php
+
+
+
+		$query = "SELECT * FROM bilder";
+    	$result = mysqli_query($db, $query);
+
+        while ($bild = mysqli_fetch_assoc($result) ) {
+    	      
+        $bilden = $bild['vag'];
+
+
+        //Här ligger bilderna
+        echo '<a class="fancybox" rel="group" href="'.$bilden.'"><img src="http://127.0.0.1/ProjectVersion1/adminAgneta/'.$bilden.'" alt="" /></a>';
+
+	}
+
+?>
+			
 
 				<script>
 	$(document).ready(function() {

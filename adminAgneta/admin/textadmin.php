@@ -21,7 +21,9 @@
 </head>
 
 <body>
-
+<a href="bildadmin.php">Gå till Bildadmin</a>
+<br />
+<br />
 
 <?php
 
@@ -38,6 +40,9 @@
 
  if(!isset($_SESSION['inloggad']) || $_SESSION['inloggad'] != TRUE){   //om inte inloggad slutar resten av sidan
  echo "Du är inte inloggad.";
+
+ echo "<br />Åter till inloggning -> ";
+ echo "<a href='index.html'>Logga in</a>";
  exit();
 }
 
