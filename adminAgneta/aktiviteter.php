@@ -61,9 +61,6 @@ if (!$db) {
     						echo $ord['Rubrik']; 
 							?></h2>
 							<p><?php
-							$query = "SELECT * FROM texter WHERE ID = 1";
-    						$result = mysqli_query($db, $query);
-   							$ord = mysqli_fetch_assoc($result);
    							echo $ord['text'];
    							?></p>
 					</content>
@@ -71,14 +68,13 @@ if (!$db) {
 
 				<article class="bottomcontent">
 					<content>
-						<h2><?php $query = "SELECT * FROM texter WHERE ID = 2";
+						<h2><?php 
+							$query = "SELECT * FROM texter WHERE ID = 2";
         					$result = mysqli_query($db, $query);
         					$ord = mysqli_fetch_assoc($result);
 		       				echo $ord['Rubrik'];  
 							?></h2>
-							<p><?php $query = "SELECT * FROM texter WHERE ID = 2";
-        					$result = mysqli_query($db, $query);
-        					$ord = mysqli_fetch_assoc($result);
+							<p><?php 
 		       				echo $ord['text'];  
 							?></p>
 					</content>
@@ -88,14 +84,13 @@ if (!$db) {
 			<div class="content">	
 				<article class="topcontent">	
 					<content>
-						<h2><?php $query = "SELECT * FROM texter WHERE ID = 3";
+						<h2><?php 
+							$query = "SELECT * FROM texter WHERE ID = 3";
         					$result = mysqli_query($db, $query);
         					$ord = mysqli_fetch_assoc($result);
 		       				echo $ord['Rubrik'];  
 							?></h2>
-							<p><?php $query = "SELECT * FROM texter WHERE ID = 3";
-        					$result = mysqli_query($db, $query);
-        					$ord = mysqli_fetch_assoc($result);
+							<p><?php 
 		       				echo $ord['text'];  
 							?></p>
 					</content>
@@ -103,14 +98,13 @@ if (!$db) {
 
 				<article class="bottomcontent">
 					<content>
-						<h2><?php $query = "SELECT * FROM texter WHERE ID = 4";
+						<h2><?php 
+							$query = "SELECT * FROM texter WHERE ID = 4";
         					$result = mysqli_query($db, $query);
         					$ord = mysqli_fetch_assoc($result);
 		       				echo $ord['Rubrik'];  
 							?></h2>
-							<p><?php $query = "SELECT * FROM texter WHERE ID = 4";
-        					$result = mysqli_query($db, $query);
-        					$ord = mysqli_fetch_assoc($result);
+							<p><?php 
 		       				echo $ord['text'];  
 							?></p>
 					</content>
@@ -120,14 +114,13 @@ if (!$db) {
         	<div class="content">	
         		<article class="topcontent">	
         			<content>
-        				<h2><?php $query = "SELECT * FROM texter WHERE ID = 5";
+        				<h2><?php 
+        					$query = "SELECT * FROM texter WHERE ID = 5";
         					$result = mysqli_query($db, $query);
         					$ord = mysqli_fetch_assoc($result);
 		       				echo $ord['Rubrik'];  
 							?></h2>
-							<p><?php $query = "SELECT * FROM texter WHERE ID = 5";
-        					$result = mysqli_query($db, $query);
-        					$ord = mysqli_fetch_assoc($result);
+							<p><?php 
 		       				echo $ord['text'];  
 							?></p>	
         			</content>
@@ -135,14 +128,13 @@ if (!$db) {
 
         		<article class="bottomcontent">
         			<content>
-        				<h2><?php $query = "SELECT * FROM texter WHERE ID = 6";
+        				<h2><?php 
+        					$query = "SELECT * FROM texter WHERE ID = 6";
         					$result = mysqli_query($db, $query);
         					$ord = mysqli_fetch_assoc($result);
 		       				echo $ord['Rubrik'];  
 							?></h2>
-							<p><?php $query = "SELECT * FROM texter WHERE ID = 6";
-        					$result = mysqli_query($db, $query);
-        					$ord = mysqli_fetch_assoc($result);
+							<p><?php 
 		       				echo $ord['text'];  
 							?></p>
         			</content>

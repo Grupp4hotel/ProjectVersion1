@@ -186,9 +186,6 @@ if (!$db) {
     						echo $ord['Rubrik']; 
 							?></h2>
 							<p><?php
-							$query = "SELECT * FROM texter WHERE ID = 7";
-    						$result = mysqli_query($db, $query);
-   							$ord = mysqli_fetch_assoc($result);
    							echo $ord['text'];
    							?></p>
 
@@ -215,9 +212,6 @@ if (!$db) {
     						echo $ord['Rubrik']; 
 							?></h2>
 							<p><?php
-							$query = "SELECT * FROM texter WHERE ID = 7";
-    						$result = mysqli_query($db, $query);
-   							$ord = mysqli_fetch_assoc($result);
    							echo $ord['text'];
    							?></p>
 						<div class="basicBox">

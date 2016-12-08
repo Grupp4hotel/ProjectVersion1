@@ -67,9 +67,6 @@ if (!$db) {
     						echo $ord['Rubrik']; 
 							?></h2>
 							<p><?php
-							$query = "SELECT * FROM texter WHERE ID = 13";
-    						$result = mysqli_query($db, $query);
-   							$ord = mysqli_fetch_assoc($result);
    							echo $ord['text'];
    							?></p>
 					</content>
@@ -85,9 +82,6 @@ if (!$db) {
     						echo $ord['Rubrik']; 
 							?></h2>
 							<p><?php
-							$query = "SELECT * FROM texter WHERE ID = 14";
-    						$result = mysqli_query($db, $query);
-   							$ord = mysqli_fetch_assoc($result);
    							echo $ord['text'];
    							?></p>
 					</content>
