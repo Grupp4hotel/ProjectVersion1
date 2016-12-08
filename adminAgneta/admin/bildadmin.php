@@ -33,15 +33,21 @@
 $db = mysqli_connect('localhost', 'root', '', 'gettexter');
 
 
+//lägg till
 if(isset($_POST['update'])){ 
 	$foto = $_FILES['nyBild']['name'];
 	move_uploaded_file($_FILES['nyBild']['tmp_name'], 'C:\xampp\htdocs\ProjectVersion1\adminAgneta\galleri\\' . $foto);
 	
-	$q = "INSERT INTO bilder (vag) values ('galleri/$foto')";
-	//echo $q;	
+	$q = "INSERT INTO bilder (vag) values ('galleri/$foto')";	
 	$result = mysqli_query($db, $q);
     }
 
+//ta bort
+if (isset($_POST['tagbort'])){
+    $sudda = $_POST['bort'];
+    $q2 = "DELETE FROM bilder WHERE id = $sudda";
+    mysqli_query($db, $q2);
+}
 
 
 //inloggning och session
@@ -97,8 +103,11 @@ echo "<form method='post'>
 
     while ($bild = mysqli_fetch_assoc($result) ) {
     	
+        
+        echo $bild['id'];
+        echo '<br />';
         echo '<img src="http://127.0.0.1/ProjectVersion1/adminAgneta/'.$bild['vag'].'"/>';
-
+        echo '<br />';
 	}
 
 ?>
@@ -111,6 +120,14 @@ echo "<form method='post'>
     <input type='submit' value='Skicka' name='update'>
 </form>
 
+<br />
+
+<p>Tag bort en bild! Skriv in den siffra som står ovanför bilden (bildens id):</p>
+
+<form method='post'>
+    <input type='text' name='bort'>
+    <input type='submit' value='Skicka' name='tagbort'>
+</form>
 
 <br />
 <br />
