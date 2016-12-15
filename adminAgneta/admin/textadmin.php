@@ -5,7 +5,7 @@
 <head>
 
  <meta charset="utf-8" />
- <title>Nonsensadmin</title>
+ <title>Textadmin</title>
 
 <style>
  	
@@ -22,6 +22,8 @@
 
 <body>
 <a href="bildadmin.php">Gå till Bildadmin</a>
+<a href="bokningar.php">Gå till inkomna bokningar</a>
+
 <br />
 <br />
 
@@ -48,6 +50,7 @@
 
 
 $db = mysqli_connect('localhost', 'root', '', 'gettexter');
+mysqli_query($db, "SET NAMES utf8");
 
 if (!$db) {
     die('Connect Error (' . mysqli_connect_errno() . ') '

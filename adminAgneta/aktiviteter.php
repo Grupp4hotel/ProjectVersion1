@@ -24,6 +24,7 @@
 
 <?php
 $db = mysqli_connect('localhost', 'root', '', 'gettexter');
+mysqli_query($db, "SET NAMES utf8");
 
 if (!$db) {
     die('Connect Error (' . mysqli_connect_errno() . ') '. mysqli_connect_error());

@@ -23,6 +23,8 @@
 <body>
 
 <a href="textadmin.php">Gå till Textadmin</a>
+<a href="bokningar.php">Gå till inkomna bokningar</a>
+
 <br />
 <br />
 
@@ -31,6 +33,7 @@
 <?php
 
 $db = mysqli_connect('localhost', 'root', '', 'gettexter');
+mysqli_query($db, "SET NAMES utf8");
 
 
 //lägg till

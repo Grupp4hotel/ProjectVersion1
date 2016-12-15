@@ -33,6 +33,7 @@
 <?php
 
 $db = mysqli_connect('localhost', 'root', '', 'gettexter');
+mysqli_query($db, "SET NAMES utf8");
 
 if (!$db) {
     die('Connect Error (' . mysqli_connect_errno() . ') '
@@ -70,20 +71,89 @@ if (!$db) {
 		<div class="content"><br>
 		
 <div id="quickSearch">
-        <form id="snabbsök" onsubmit="mySubmit()">
+        <form id="snabbsök" method="post">
 
             <label class="sökfs" for="fromDate">Ankomst: </label>
-            <input type="text" id="fromDate" placeholder="åååå-mm-dd"/>
+            <input type="text" id="fromDate" name="fromDate" placeholder="åååå-mm-dd"/>
 
             <label class="sökfs" for="untilDate">Avresa: </label>
-            <input type="text" id="untilDate" placeholder="åååå-mm-dd"/>
+            <input type="text" id="untilDate" name="untilDate" placeholder="åååå-mm-dd"/>
 
             <label class="sökfs" for="antPers">Pers x: </label>
             <input type="number" min="1" max="3" id="antPers" />
 
-            <button id="searchLink" type="submit">Boka</button>
+            <input id="sokKnapp" type="submit" name="sokKnapp" value="Sök" />
 
-        </form>
+
+		</form>
+
+		<?php
+
+
+if(isset($_POST['sokKnapp'])){ 
+
+	$start = $_POST['fromDate'];
+	$stopp = $_POST['untilDate'];
+
+
+	$bokadeRum = "SELECT rumsNr FROM bokningstabell WHERE (startdatum <= '$start' AND slutdatum > '$start') OR (startdatum < '$stopp' AND slutdatum >= '$stopp') OR (startdatum < '$stopp' AND slutdatum > '$start')"; 
+
+$result = mysqli_query($db, $bokadeRum);
+
+$tagna = array();
+
+while ($row = mysqli_fetch_assoc($result)) {
+	array_push($tagna, $row['rumsNr']);
+	//echo "{$row['rumsNr']}";
+}
+
+//test för att se om alla finns med
+// foreach($tagna as $rum) {
+// 	echo "taget: ";
+//     echo $rum, '<br />';
+// }
+
+
+
+$lediga = array(1, 2, 3, 4, 5, 6, 7, 8);
+
+$lediga = array_diff($lediga, $tagna);
+//print_r($alla);
+
+// foreach($lediga as $rum) {
+// 	echo "ledigt: ";
+//     echo $rum; 
+//     echo '<br />';
+// }
+
+
+$antalLediga = count($lediga);
+//echo $antalLediga;
+
+	
+echo "
+    </div>
+
+<br />
+
+<div class='göm' id='göm'>";
+
+if ($antalLediga < 1 || $antalLediga == NULL) {
+	echo '<p class="gömtext">Det finns inga lediga rum under den angivna perioden</p>';
+}
+else {
+	echo '<p class="gömtext">Det finns lediga rum, gå vidare till bokningen.</p>'.'<form>
+	<input id="searchLink" type="submit" name="bokaKnapp" onclick="mySubmit()" value="Boka" />
+	</form>';
+	}
+
+}
+
+?>
+</div>
+            
+
+        
 
     </div>
 
@@ -138,7 +208,8 @@ if (!$db) {
         }
 
         function mySubmit() {
-            window.open("bokning.html");
+        	tillBokning();
+            window.open("bokning.php");
         }
     </script>
 
