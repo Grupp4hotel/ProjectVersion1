@@ -67,7 +67,7 @@ echo "<form method='post'>
 
 
     <?php
-        $query = "SELECT * FROM bokningstabell";
+        $query = "SELECT * FROM bokningstabell ORDER BY startdatum DESC";
         $result = mysqli_query($db, $query);
 
         

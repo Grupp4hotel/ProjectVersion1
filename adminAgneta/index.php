@@ -71,7 +71,7 @@ if (!$db) {
 		<div class="content"><br>
 		
 <div id="quickSearch">
-        <form id="snabbsök" method="post">
+        <form id="snabbsok" method="post">
 
             <label class="sökfs" for="fromDate">Ankomst: </label>
             <input type="text" id="fromDate" name="fromDate" placeholder="åååå-mm-dd"/>
@@ -134,7 +134,7 @@ if ($antalLediga < 1 || $antalLediga == NULL) {
 	echo '<p class="gömtext">Det finns inga lediga rum under den angivna perioden</p>';
 }
 else {
-	echo '<p class="gömtext">Det finns lediga rum, gå vidare till bokningen.</p>'.'<input id="searchLink" type="submit" name="bokaKnapp" onclick="mySubmit(); tillBokning();" value="Boka" />';
+	echo '<p class="gömtext">Det finns lediga rum, gå vidare till bokningen.</p>'.'<input id="searchLink" type="submit" name="bokaKnapp" onclick="mySubmit();" value="Boka" />';
 	}
 
 }
@@ -180,7 +180,7 @@ else {
 
          //-----------------------------Överför till bokningssidan---------------
 
-        document.getElementById("searchLink").addEventListener("click", tillBokning);
+        document.getElementById("sokKnapp").addEventListener("click", tillBokning);
 
         function tillBokning() {
 
@@ -189,20 +189,19 @@ else {
             var datumTill = document.getElementById("untilDate").value;
             var antalPers = document.getElementById("antPers").value;
 
-            var överförData = [];
+            var overforData = [];
 
-            överförData.push(datumFrån);
-            överförData.push(datumTill);
-            överförData.push(antalPers);
+            overforData.push(datumFrån);
+            overforData.push(datumTill);
+            overforData.push(antalPers);
 
 
 
-            var bokningsStart = JSON.stringify(överförData);
-            localStorage.setItem("snabbsök", bokningsStart);     
+            var bokningsStart = JSON.stringify(overforData);
+            localStorage.setItem("snabbsok", bokningsStart);     
         }
 
         function mySubmit() {
-        	tillBokning();
             window.open("bokning.php");
         }
     </script>
@@ -412,9 +411,9 @@ else {
 //-----------------Få datumet från första kalendern att synas i andra-------------------
 var first = true;
 
-document.getElementById("fromDate").addEventListener("change", överför);
+document.getElementById("fromDate").addEventListener("change", overfor);
 
-function överför() {
+function overfor() {
     var datum1 = document.getElementById("fromDate").value;
     var datum2 = document.getElementById("untilDate");  
     

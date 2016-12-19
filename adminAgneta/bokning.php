@@ -45,11 +45,11 @@ if (!$db) {
 
 <script>     //tar datum från första sidan
 
-        överför();
+        window.onload = loadSavedDates;
 
-        function överför() {
+        function loadSavedDates() {
 
-                var bokningsStart = localStorage.getItem("snabbsök");
+                var bokningsStart = localStorage.getItem("snabbsok");
                 var hämtadData = JSON.parse(bokningsStart);
 
                 console.log(hämtadData);
@@ -158,14 +158,14 @@ while ($row = mysqli_fetch_assoc($result)) {
 
 	$lediga = array(1, 2, 3, 4, 5, 6, 7, 8);
 
-	$lediga = array_diff($lediga, $tagna);
+	$lediga = array_values(array_diff($lediga, $tagna));
 //print_r($alla);
 
-foreach($lediga as $rum) {
-	echo "ledigt: ";
-    echo $rum; 
-    echo '<br />';
-}
+// foreach($lediga as $rum) {
+// 	echo "ledigt: ";
+//     echo $rum; 
+//     echo '<br />';
+// }
 
 	$antalLediga = count($lediga);
 	//echo $antalLediga;
@@ -179,7 +179,6 @@ foreach($lediga as $rum) {
 	else {
 		//ta ledigt rum
 		$ledigtRum = $lediga[0];
-
 
         //boka
 		$fornamn = $_POST['fornamn'];
@@ -235,9 +234,9 @@ foreach($lediga as $rum) {
         //Få datumet från första kalendern att synas i andra
 var first = true;
 
-document.getElementById("inDatum").addEventListener("change", överför);
+document.getElementById("inDatum").addEventListener("change", overfor);
 
-function överför() {
+function overfor() {
     var datum1 = document.getElementById("inDatum").value;
     var datum2 = document.getElementById("utDatum");  
     
