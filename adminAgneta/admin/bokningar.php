@@ -65,33 +65,39 @@ echo "<form method='post'>
 
 ?>
 
-<p>
+
     <?php
         $query = "SELECT * FROM bokningstabell";
         $result = mysqli_query($db, $query);
 
+        
+   echo '<table>';
 
 
+//while ($row = mysqli_fetch_array($result)) {
+echo '<tr><th>ID</th><th>Startdatum</th><th>Slutdatum</th><th>RumsNr.</th><th>Förnamn</th><th>Efternamn</th><th>Antal</th><th>Önskemål</th></tr>';
+    
+    while($row = mysqli_fetch_assoc($result)){
+        echo '<tr>';
+        echo '<td>'.$row['id'].'</td>';
+        echo '<td>'.$row['startdatum'].'</td>';
+        echo '<td>'.'&nbsp&nbsp&nbsp'.$row['slutdatum'].'</td>';
+        echo '<td>'.'&nbsp&nbsp&nbsp'.$row['rumsNr'].'</td>';
+        echo '<td>'.$row['fornamn'].'</td>';
+        echo '<td>'.'&nbsp&nbsp&nbsp'.$row['efternamn'].'</td>';
+        echo '<td>'.'&nbsp&nbsp&nbsp'.$row['antalPers'].'</td>';
+        echo '<td>'.$row['onskemal'].'</td>';
+        echo '</tr>';
+        //echo '<br />';
+ }
 
-        while($row = mysql_fetch_assoc($result))
-{
-   echo $row['name']." ";
-   echo $row['email']." ";
-}
+ echo '</table>';
 
 
     ?>
-</p>
 
-<h2><?php
-                            $query = "SELECT * FROM texter WHERE ID = 1";
-                            $result = mysqli_query($db, $query);
-                            $ord = mysqli_fetch_assoc($result);
-                            echo $ord['Rubrik']; 
-                            ?></h2>
-                            <p><?php
-                            echo $ord['text'];
-                            ?></p>
+
+                          
 
 
 

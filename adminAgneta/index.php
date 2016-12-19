@@ -80,14 +80,11 @@ if (!$db) {
             <input type="text" id="untilDate" name="untilDate" placeholder="åååå-mm-dd"/>
 
             <label class="sökfs" for="antPers">Pers x: </label>
-            <input type="number" min="1" max="3" id="antPers" />
+            <input type="number" min="1" max="3" id="antPers" name="antPers" />
 
             <input id="sokKnapp" type="submit" name="sokKnapp" value="Sök" />
 
-
-		</form>
-
-		<?php
+<?php
 
 
 if(isset($_POST['sokKnapp'])){ 
@@ -131,25 +128,21 @@ $antalLediga = count($lediga);
 //echo $antalLediga;
 
 	
-echo "
-    </div>
-
-<br />
-
-<div class='göm' id='göm'>";
+echo "<br />";
 
 if ($antalLediga < 1 || $antalLediga == NULL) {
 	echo '<p class="gömtext">Det finns inga lediga rum under den angivna perioden</p>';
 }
 else {
-	echo '<p class="gömtext">Det finns lediga rum, gå vidare till bokningen.</p>'.'<form>
-	<input id="searchLink" type="submit" name="bokaKnapp" onclick="mySubmit()" value="Boka" />
-	</form>';
+	echo '<p class="gömtext">Det finns lediga rum, gå vidare till bokningen.</p>'.'<input id="searchLink" type="submit" name="bokaKnapp" onclick="mySubmit(); tillBokning();" value="Boka" />';
 	}
 
 }
 
 ?>
+		</form>
+
+		
 </div>
             
 
@@ -203,8 +196,9 @@ else {
             överförData.push(antalPers);
 
 
+
             var bokningsStart = JSON.stringify(överförData);
-            localStorage.setItem("snabbsök", bokningsStart);
+            localStorage.setItem("snabbsök", bokningsStart);     
         }
 
         function mySubmit() {

@@ -19,10 +19,55 @@
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
 	<script src="js/load.js"></script>
 
+
+
+	<!--för Datepicker-->
+    <link href="https://code.jquery.com/ui/1.11.4/themes/le-frog/jquery-ui.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
 </head>
 
 
 <body class="body">
+
+<?php
+
+$db = mysqli_connect('localhost', 'root', '', 'gettexter');
+mysqli_query($db, "SET NAMES utf8");
+
+if (!$db) {
+    die('Connect Error (' . mysqli_connect_errno() . ') '
+            . mysqli_connect_error());
+}
+
+?>
+
+<script>     //tar datum från första sidan
+
+        överför();
+
+        function överför() {
+
+                var bokningsStart = localStorage.getItem("snabbsök");
+                var hämtadData = JSON.parse(bokningsStart);
+
+                console.log(hämtadData);
+
+            //i bokning
+            var inDatum = document.getElementById("inDatum");
+            var utDatum = document.getElementById("utDatum");
+            var numPpl = document.getElementById("numPpl");
+
+            inDatum.value = hämtadData[0];
+            utDatum.value = hämtadData[1];
+            numPpl.value = hämtadData[2];
+
+        }
+
+    </script>
+
+
 <div class="se-pre-con"></div>
 	<header class="mainHeader">
 	<center><a class="logo" href="index.php" <h1>GLADA GETEN</h1></a>
@@ -68,21 +113,151 @@
 					<h2>Bokningsuppgifter</h2>
 					<br>
 					<content >
-						<form id="f0rm">
-							<label></label><br><input class="input" type="text" placeholder="Förnamn"><br>
-							<label></label><br><input class="input" type="text" placeholder="Efternamn"><br>
-							<label></label><br><input class="input" type="date" placeholder="Incheckning" id="inDatum"><br>
-							<label></label><br><input class="input" type="date" placeholder="Utcheckning" id="utDatum"><br>
+						<form id="f0rm" method="post">
+							<label></label><br><input class="input" type="text" name="fornamn" placeholder="Förnamn"><br>
+							<label></label><br><input class="input" type="text" name="efternamn" placeholder="Efternamn"><br>
+							<label></label><br><input class="input" type="text" name="inDatum" placeholder="Incheckning" id="inDatum"><br>
+							<label></label><br><input class="input" type="text" name="utDatum" placeholder="Utcheckning" id="utDatum"><br>
 							<label>Personer</label><br>
-							<select class="s3lect" id="numPpl">
-							<option class="opti0n" value="blank"></option>
-							<option class="opti0n" value="1">1</option>
-							<option class="opti0n" value="2">2</option>
-							<option class="opti0n" value="3">3</option></select><br>
+							<select class="s3lect" id="numPpl" name="numPpl">
+								<option class="opti0n" value="blank"></option>
+								<option class="opti0n" value="1">1</option>
+								<option class="opti0n" value="2">2</option>
+								<option class="opti0n" value="3">3</option></select><br>
 							<label for="comments">Övriga önskemål</label><br>
 							<textarea name="comments" class="textarea"></textarea><br>
-							<button class="knapp" type="submit" value="Submit">Boka</button><br>
-						</form>
+							<input class="knapp" type="submit" name="bokningsKnapp" value="Boka" /><br>
+
+
+<?php
+
+
+if(isset($_POST['bokningsKnapp'])){ 
+
+	$start = $_POST['inDatum'];
+	$stopp = $_POST['utDatum'];
+
+
+	$bokadeRum = "SELECT rumsNr FROM bokningstabell WHERE (startdatum <= '$start' AND slutdatum > '$start') OR (startdatum < '$stopp' AND slutdatum >= '$stopp') OR (startdatum < '$stopp' AND slutdatum > '$start')"; 
+
+$result = mysqli_query($db, $bokadeRum);
+
+$tagna = array();
+
+while ($row = mysqli_fetch_assoc($result)) {
+	array_push($tagna, $row['rumsNr']);
+	//echo "{$row['rumsNr']}";
+//}
+}
+
+//test för att se om alla finns med
+// foreach($tagna as $rum) {
+// 	echo "taget: ";
+//     echo $rum, '<br />';
+// }
+
+	$lediga = array(1, 2, 3, 4, 5, 6, 7, 8);
+
+	$lediga = array_diff($lediga, $tagna);
+//print_r($alla);
+
+// foreach($lediga as $rum) {
+// 	echo "ledigt: ";
+//     echo $rum; 
+//     echo '<br />';
+// }
+
+
+	$antalLediga = count($lediga);
+	//echo $antalLediga;
+
+	
+
+	//
+	if ($antalLediga < 1 || $antalLediga == NULL) {
+		echo "<script type='text/javascript'>alert('Det finns inga lediga rum under den angivna perioden. Försök igen!');</script>";
+		//echo '<p>Det finns inga lediga rum under den angivna perioden. Försök igen!"<p>';
+		exit();
+	}
+	else {
+		//ta ledigt rum
+		$ledigtRum = $lediga[0];
+
+
+        //boka
+		$fornamn = $_POST['fornamn'];
+		$efternamn = $_POST['efternamn'];
+		$rumsNr = $lediga[0];
+		$antPers = $_POST['numPpl'];
+		$onskemal = $_POST['comments'];
+
+
+	$q = "INSERT INTO bokningstabell (startdatum, slutdatum, rumsNr, fornamn, efternamn, antalPers, onskemal) VALUES ('$start', '$stopp', '$rumsNr', '$fornamn', '$efternamn', '$antPers', '$onskemal')";
+
+	mysqli_query($db, $q);
+
+	echo "<script type='text/javascript'>alert('Du har nu bokat rum på Den Glada Geten! Välkommen!');</script>";
+	//echo '<p>Du har nu bokat rum på Den Glada Geten! Välkommen!<p>';
+		}
+}
+
+?>
+
+
+</form>
+
+<script>
+ //datepicker: begränsa datum
+        $.datepicker.setDefaults({
+            changeMonth: true,
+            changeYear: true,
+            dateFormat: 'dd-mm-yy'
+        });
+        $('#inDatum').datepicker({ dateFormat: 'yy-mm-dd',
+            minDate: '+0',
+            onSelect: function (dateStr) {
+                var min = $(this).datepicker('getDate') || new Date(); // Selected date or today if none
+                var max = new Date(min.getTime());
+                max.setMonth(max.getMonth() + 36); // Add 3 years
+
+                var min2 = new Date(min.getTime());
+                min2.setDate(min2.getDate() + 1);
+
+                $('#utDatum').datepicker('option', { minDate: min2, maxDate: max });
+            }
+        });
+        $('#utDatum').datepicker({ dateFormat: 'yy-mm-dd',
+            minDate: '+0',
+            maxDate: '+1m',
+            onSelect: function (dateStr) {
+                var max = $(this).datepicker('getDate'); // Selected date or null if none
+                $('#inDatum').datepicker('option', { maxDate: max });
+            }
+        });
+
+        //Få datumet från första kalendern att synas i andra
+var first = true;
+
+document.getElementById("inDatum").addEventListener("change", överför);
+
+function överför() {
+    var datum1 = document.getElementById("inDatum").value;
+    var datum2 = document.getElementById("utDatum");  
+    
+    if (first) 
+    {
+        datum2.value = datum1;
+        first = false;
+    }  
+}
+</script>
+
+
+
+
+
+
+
 					</content>
 
 				</article>
@@ -118,28 +293,7 @@
 
 
 
-<script>     //tar datum från första sidan
 
-        överför();
-
-        function överför() {
-
-                var bokningsStart = localStorage.getItem("snabbsök");
-                var hämtadData = JSON.parse(bokningsStart);
-
-                //console.log(hämtadData);
-
-            //i bokning
-            var inDatum = document.getElementById("inDatum");
-            var utDatum = document.getElementById("utDatum");
-            var numPpl = document.getElementById("numPpl");
-
-            inDatum.value = hämtadData[0];
-            utDatum.value = hämtadData[1];
-            numPpl.value = hämtadData[2];
-
-        }
-    </script>
 
 
 </body>
