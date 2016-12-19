@@ -5,6 +5,13 @@ SET time_zone = '+00:00';
 SET foreign_key_checks = 0;
 SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
 
+DROP TABLE IF EXISTS `allarum`;
+CREATE TABLE `allarum` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `Rum` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
 INSERT INTO `allarum` (`id`, `Rum`) VALUES
 (1,	1),
 (2,	2),
@@ -61,7 +68,10 @@ INSERT INTO `bokningstabell` (`id`, `startdatum`, `slutdatum`, `rumsNr`, `fornam
 (9,	'2017-01-03',	'2017-01-22',	7,	'Karl-Astrid',	'Sverkersson',	2,	''),
 (10,	'2017-01-02',	'2017-01-07',	8,	'Karl',	'Den Tolfte',	3,	''),
 (11,	'2017-01-03',	'2017-01-07',	1,	'Birgit',	'Nilsson',	1,	''),
-(21,	'2016-12-20',	'2016-12-24',	1,	'Christina',	'Holgersson',	1,	'-');
+(21,	'2016-12-20',	'2016-12-24',	1,	'Christina',	'Holgersson',	1,	'-'),
+(27,	'2016-12-20',	'2016-12-29',	2,	'Sigge',	'Storflamman',	2,	'Gillar värme!'),
+(28,	'2017-02-01',	'2017-02-04',	1,	'Hercule',	'Poirot',	1,	'Poirot wants his room in perfect condition!'),
+(29,	'2017-01-18',	'2017-02-18',	2,	'Fam',	'Bernadotte',	3,	'');
 
 DROP TABLE IF EXISTS `texter`;
 CREATE TABLE `texter` (
@@ -86,4 +96,4 @@ INSERT INTO `texter` (`ID`, `Rubrik`, `text`) VALUES
 (13,	'Om Den Glada Geten B & B',	'Den Glada Geten B & B ligger beläget i det natursköna området Tjärnholmen i Norrbotten. Utöver smakfullt inredda rum finns även aktiveter att boka in under din vistelse. Gården är en gammal släktgård, som 2005 gjordes om till b & b och har sedan dess lockat besökare från hela Sverige och även världen.'),
 (14,	'Selma & Gösta',	'På Den Glada Geten har vi två ”husgetter”, Gösta och Selma, som håller till i en liten hage alldeles bredvid gårdshuset. Kring gården finns även trevliga vandringsslingor och vågar min sig på ett dopp i älven kan man boka bastu på den glada geten efter det svalkande doppet.');
 
--- 2016-12-19 13:17:02
+-- 2016-12-19 15:12:42
