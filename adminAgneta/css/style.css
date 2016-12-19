@@ -217,6 +217,7 @@ h4 span { background:#fff2e6; padding:0 10px; }
 
 
        #quickSearch, #göm {
+       	    color: white;
             width: 95%;
             margin: auto;
             text-align: center;
@@ -234,12 +235,12 @@ h4 span { background:#fff2e6; padding:0 10px; }
 			text-align:center;
         }
 
-        #snabbsök {
+        #snabbsok {
             padding-bottom: 20px;
             padding-top: 20px;
         }
 
-        .sökfs, .gömtext {
+        .sokfs, .gomtext {
             color: white;
             font-family: sans-serif;
             padding-left: 5px;
@@ -318,7 +319,7 @@ h4 span { background:#fff2e6; padding:0 10px; }
 	width: 91%;
 	margin: 2% auto;
 }
-.besök{
+.besok{
 	width:25%;
 	float:left;
 	padding-left:5%;
@@ -534,7 +535,7 @@ h4 span { background:#fff2e6; padding:0 10px; }
 		width: 86%;
 		margin: 2% auto;
 	}
-	.besök{
+	.besok{
 			width:90%;
 		padding: 6%;
 		margin-bottom: 4%;

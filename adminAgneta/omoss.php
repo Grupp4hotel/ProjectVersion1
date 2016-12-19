@@ -92,7 +92,7 @@ if (!$db) {
 	<footer class="mainFooter">
 		<h4></h4>
 		<br>
-		<div class="besök">
+		<div class="besok">
 		<h2>Besök oss på plats</h2>
 
 		<p>Glada getenvägen 40</p>

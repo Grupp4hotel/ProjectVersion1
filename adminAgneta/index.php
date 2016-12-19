@@ -73,13 +73,13 @@ if (!$db) {
 <div id="quickSearch">
         <form id="snabbsok" method="post">
 
-            <label class="sökfs" for="fromDate">Ankomst: </label>
+            <label class="sokfs" for="fromDate">Ankomst: </label>
             <input type="text" id="fromDate" name="fromDate" placeholder="åååå-mm-dd"/>
 
-            <label class="sökfs" for="untilDate">Avresa: </label>
+            <label class="sokfs" for="untilDate">Avresa: </label>
             <input type="text" id="untilDate" name="untilDate" placeholder="åååå-mm-dd"/>
 
-            <label class="sökfs" for="antPers">Pers x: </label>
+            <label class="sokfs" for="antPers">Pers x: </label>
             <input type="number" min="1" max="3" id="antPers" name="antPers" />
 
             <input id="sokKnapp" type="submit" name="sokKnapp" value="Sök" />
@@ -131,10 +131,10 @@ $antalLediga = count($lediga);
 echo "<br />";
 
 if ($antalLediga < 1 || $antalLediga == NULL) {
-	echo '<p class="gömtext">Det finns inga lediga rum under den angivna perioden</p>';
+	echo '<p class="gomtext">Det finns inga lediga rum under den angivna perioden</p>';
 }
 else {
-	echo '<p class="gömtext">Det finns lediga rum, gå vidare till bokningen.</p>'.'<input id="searchLink" type="submit" name="bokaKnapp" onclick="mySubmit();" value="Boka" />';
+	echo '<p class="gomtext">Det finns lediga rum, gå vidare till bokningen.</p>'.'<input id="searchLink" type="submit" name="bokaKnapp" onclick="mySubmit();" value="Boka" />';
 	}
 
 }
@@ -185,13 +185,13 @@ else {
         function tillBokning() {
 
             //i snabbsök
-            var datumFrån = document.getElementById("fromDate").value;
+            var datumFran = document.getElementById("fromDate").value;
             var datumTill = document.getElementById("untilDate").value;
             var antalPers = document.getElementById("antPers").value;
 
             var overforData = [];
 
-            overforData.push(datumFrån);
+            overforData.push(datumFran);
             overforData.push(datumTill);
             overforData.push(antalPers);
 
@@ -377,7 +377,7 @@ else {
 	<footer class="mainFooter">
 		<h4></h4>
 		<br>
-		<div class="besök">
+		<div class="besok">
 		<h2>Besök oss på plats</h2>
 
 		<p>Glada getenvägen 40</p>
