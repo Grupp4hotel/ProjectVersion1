@@ -5,6 +5,16 @@ SET time_zone = '+00:00';
 SET foreign_key_checks = 0;
 SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
 
+INSERT INTO `allarum` (`id`, `Rum`) VALUES
+(1,	1),
+(2,	2),
+(3,	3),
+(4,	4),
+(5,	5),
+(6,	6),
+(7,	7),
+(8,	8);
+
 DROP TABLE IF EXISTS `bilder`;
 CREATE TABLE `bilder` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -25,6 +35,33 @@ INSERT INTO `bilder` (`id`, `vag`) VALUES
 (14,	'galleri/Selma.jpg'),
 (18,	'galleri/11.jpg'),
 (19,	'galleri/14.jpg');
+
+DROP TABLE IF EXISTS `bokningstabell`;
+CREATE TABLE `bokningstabell` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `startdatum` date NOT NULL,
+  `slutdatum` date NOT NULL,
+  `rumsNr` int(11) NOT NULL,
+  `fornamn` varchar(100) COLLATE utf8_bin NOT NULL,
+  `efternamn` varchar(100) COLLATE utf8_bin NOT NULL,
+  `antalPers` int(11) NOT NULL,
+  `onskemal` text COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+INSERT INTO `bokningstabell` (`id`, `startdatum`, `slutdatum`, `rumsNr`, `fornamn`, `efternamn`, `antalPers`, `onskemal`) VALUES
+(1,	'2016-12-17',	'2016-12-20',	2,	'Sverker',	'Johansson',	2,	'Allergisk mot smör'),
+(2,	'2016-12-17',	'2016-12-28',	6,	'Johanna',	'Svensson',	2,	''),
+(3,	'2016-12-28',	'2017-01-05',	5,	'Karl',	'Den Lille',	1,	'Vill ha extra kuddar!'),
+(4,	'2017-01-04',	'2017-01-06',	2,	'Helga',	'Elch',	1,	'Ich willen ja Elchen sehen!'),
+(5,	'2017-01-03',	'2017-01-07',	3,	'Lillegris',	'von Knorr',	1,	'Äntligen är julen över.'),
+(6,	'2017-01-04',	'2017-01-06',	4,	'Greta',	'Andersson',	2,	''),
+(7,	'2017-01-03',	'2017-01-06',	5,	'Hans',	'Hansson',	1,	''),
+(8,	'2017-01-02',	'2017-01-08',	6,	'Gösta',	'Skogstomte',	3,	'Kan man äta getter?'),
+(9,	'2017-01-03',	'2017-01-22',	7,	'Karl-Astrid',	'Sverkersson',	2,	''),
+(10,	'2017-01-02',	'2017-01-07',	8,	'Karl',	'Den Tolfte',	3,	''),
+(11,	'2017-01-03',	'2017-01-07',	1,	'Birgit',	'Nilsson',	1,	''),
+(21,	'2016-12-20',	'2016-12-24',	1,	'Christina',	'Holgersson',	1,	'-');
 
 DROP TABLE IF EXISTS `texter`;
 CREATE TABLE `texter` (
@@ -49,4 +86,4 @@ INSERT INTO `texter` (`ID`, `Rubrik`, `text`) VALUES
 (13,	'Om Den Glada Geten B & B',	'Den Glada Geten B & B ligger beläget i det natursköna området Tjärnholmen i Norrbotten. Utöver smakfullt inredda rum finns även aktiveter att boka in under din vistelse. Gården är en gammal släktgård, som 2005 gjordes om till b & b och har sedan dess lockat besökare från hela Sverige och även världen.'),
 (14,	'Selma & Gösta',	'På Den Glada Geten har vi två ”husgetter”, Gösta och Selma, som håller till i en liten hage alldeles bredvid gårdshuset. Kring gården finns även trevliga vandringsslingor och vågar min sig på ett dopp i älven kan man boka bastu på den glada geten efter det svalkande doppet.');
 
--- 2016-12-12 14:04:27
+-- 2016-12-19 13:17:02

@@ -161,17 +161,14 @@ while ($row = mysqli_fetch_assoc($result)) {
 	$lediga = array_diff($lediga, $tagna);
 //print_r($alla);
 
-// foreach($lediga as $rum) {
-// 	echo "ledigt: ";
-//     echo $rum; 
-//     echo '<br />';
-// }
-
+foreach($lediga as $rum) {
+	echo "ledigt: ";
+    echo $rum; 
+    echo '<br />';
+}
 
 	$antalLediga = count($lediga);
 	//echo $antalLediga;
-
-	
 
 	//
 	if ($antalLediga < 1 || $antalLediga == NULL) {
