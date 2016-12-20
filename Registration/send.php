@@ -6,4 +6,4 @@ mail('prasanth.joseph@student.kyh.se', 'Mail Subject', 'Message', 'From: prasant
 
 
 
- ?>
+ >
